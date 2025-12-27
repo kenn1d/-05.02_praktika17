@@ -8,7 +8,7 @@
         Title="Система управления печатью" Height="450" Width="800">
     <Grid Background="White">
         <Grid Background="#ffffc500" Height="75" VerticalAlignment="Top">
-            <Image HorizontalAlignment="Left" Height="55" Margin="10,10,0,0" VerticalAlignment="Top" Width="55"/>
+            <Image Source="Images\icon-black.png" HorizontalAlignment="Left" Height="55" Margin="10,10,0,0" VerticalAlignment="Top" Width="55"/>
             <Label Content="Добавть запись" HorizontalAlignment="Left" Margin="70,10,0,0" VerticalAlignment="Top"
                    FontSize="36" FontWeight="Bold" Foreground="White"/>
             <Button Content="Вернуться" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top"
