@@ -331,12 +331,12 @@ namespace WpfApp1
                         newTOW.occupancy = true;
                     }
                 }
-                newTOW.count = int.Parse(textBoxCount.Text);
-                newTOW.price = float.Parse(textBoxPrice.Text);
-                addOperationButton.Content = "Добавить";
-                Operations.Items.Add(newTOW);
-                CostCalculations();
             }
+            newTOW.count = int.Parse(textBoxCount.Text);
+            newTOW.price = float.Parse(textBoxPrice.Text);
+            addOperationButton.Content = "Добавить";
+            Operations.Items.Add(newTOW);
+            CostCalculations();
         }
 
         private void ColorsChange(object sender, RoutedEventArgs e)
@@ -354,5 +354,42 @@ namespace WpfApp1
             if(!int.TryParse(e.Text, out int x))
                 MessageBox.Show("Ввод должен осуществляться цифрами!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void addTotal(object sender, RoutedEventArgs e)
+        {
+            for(int i = 0; Operations.Items.Count - 1 >= i; i++)
+            {
+                TypeOperationsWindow totalOper = new TypeOperationsWindow();
+
+                TypeOperationsWindow newTOW = Operations.Items[i] as TypeOperationsWindow;
+                totalOper.fio = usersName.Text;
+                totalOper.typeOperationText = newTOW.typeOperationText;
+                totalOper.formatText = newTOW.formatText;
+                totalOper.side = newTOW.side;
+                totalOper.colorText = newTOW.colorText;
+                totalOper.count = newTOW.count;
+                totalOper.price = newTOW.price;
+
+                journalOperations.Items.Add(totalOper);
+            }
+            Operations.Items.Clear();
+        }
+
+        private void newOper(object sender, RoutedEventArgs e)
+        {
+            tabList.SelectedIndex = 0;
+        }
+
+        private void deleteTotalList(object sender, RoutedEventArgs e)
+        {
+            if (journalOperations.SelectedIndex != -1)
+            {
+                journalOperations.Items.Remove(journalOperations.Items[journalOperations.SelectedIndex]);
+            }
+            else
+                MessageBox.Show("Пожалуйста, выберите операцию для удаления");
+        }
+
+        
     }
 }
