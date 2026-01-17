@@ -364,9 +364,13 @@ namespace WpfApp1
                 TypeOperationsWindow newTOW = Operations.Items[i] as TypeOperationsWindow;
                 totalOper.fio = usersName.Text;
                 totalOper.typeOperationText = newTOW.typeOperationText;
+                totalOper.typeOperation = newTOW.typeOperation;
                 totalOper.formatText = newTOW.formatText;
+                totalOper.format = newTOW.format;
                 totalOper.side = newTOW.side;
                 totalOper.colorText = newTOW.colorText;
+                totalOper.color = newTOW.color;
+                totalOper.occupancy = newTOW.occupancy;
                 totalOper.count = newTOW.count;
                 totalOper.price = newTOW.price;
 
@@ -390,6 +394,32 @@ namespace WpfApp1
                 MessageBox.Show("Пожалуйста, выберите операцию для удаления");
         }
 
-        
+        private void editOper(object sender, RoutedEventArgs e)
+        {
+            //if (journalOperations.SelectedIndex != -1)
+            //{
+            //    TypeOperationsWindow newTOW = journalOperations.Items[journalOperations.SelectedIndex] as TypeOperationsWindow;
+
+            //    typeOperation.SelectedItem = typeOperationList.Find(x => x.id == newTOW.typeOperation).name;
+            //    formats.SelectedItem = formatsList.Find(x => x.id == newTOW.format).format;
+
+            //    if (newTOW.side == 1) TwoSides.IsChecked = true;
+            //    else if (newTOW.side == 2) TwoSides.IsChecked = true;
+
+            //    Colors.IsChecked = newTOW.color;
+
+            //    string[] resultColor = newTOW.colorText.Split('(');
+            //    if (resultColor.Length == 1) LotOfColor.IsChecked = false;
+            //    else if (resultColor.Length == 2) LotOfColor.IsChecked = true;
+
+            //    textBoxCount.Text = newTOW.count.ToString();
+            //    textBoxPrice.Text = newTOW.price.ToString();
+
+            //    addOperationButton.Content = "Изменить";
+
+            //    journalOperations.Items.Remove(journalOperations.Items[journalOperations.SelectedIndex]);
+            //}
+            //else MessageBox.Show("Пожалуйста, выберите операцию для редактирования");
+        }
     }
 }
